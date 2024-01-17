@@ -92,8 +92,13 @@ variable "public_subnet_2" {
   type        = string
 }
 
-variable "codebuild_build_env_vars" {
+variable "backend_codebuild_build_env_vars" {
   description = "Environment variables for codebuild of backend building stage"
+  type        = any
+}
+
+variable "backend_codebuild_testing_env_vars" {
+  description = "Environment variables for codebuild of backend testing stage"
   type        = any
 }
 

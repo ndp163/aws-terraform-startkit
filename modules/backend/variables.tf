@@ -123,3 +123,13 @@ variable "git_repository_name" {
 variable "git_repository_branch" {
   description = "Build branch aka Master"
 }
+
+variable "codebuild_build_env_vars" {
+  description = "Environment variables for codebuild of backend building stage"
+  type        = any
+}
+
+variable "codebuild_testing_env_vars" {
+  description = "Environment variables for codebuild of backend testing stage"
+  type        = any
+}

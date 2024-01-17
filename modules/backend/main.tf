@@ -89,7 +89,7 @@
 #   project        = var.project
 #   repository_url = "repositoy url" # module.ecr.repo_url
 
-#   codebuild_build_env_vars = merge({}, {
+#   codebuild_build_env_vars = merge(var.codebuild_build_env_vars, {
 #     REGION         = var.region
 #     RDS_HOST       = "abcd"
 #     RDS_PORT       = "sbvasdv"
@@ -99,7 +99,8 @@
 #     CONTAINER_NAME = module.ecs.container_name
 #   })
 
-#   codebuild_testing_env_vars = {}
+#   codebuild_testing_env_vars = merge(var.codebuild_testing_env_vars, {
+#   })
 # }
 
 # module "pipeline" {

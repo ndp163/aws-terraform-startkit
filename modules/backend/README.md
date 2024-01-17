@@ -25,6 +25,8 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_codebuild_build_env_vars"></a> [codebuild\_build\_env\_vars](#input\_codebuild\_build\_env\_vars) | Environment variables for codebuild of backend building stage | `any` | n/a | yes |
+| <a name="input_codebuild_testing_env_vars"></a> [codebuild\_testing\_env\_vars](#input\_codebuild\_testing\_env\_vars) | Environment variables for codebuild of backend testing stage | `any` | n/a | yes |
 | <a name="input_cpu_to_scale_down"></a> [cpu\_to\_scale\_down](#input\_cpu\_to\_scale\_down) | CPU % to Scale Down the number of containers | `any` | n/a | yes |
 | <a name="input_cpu_to_scale_up"></a> [cpu\_to\_scale\_up](#input\_cpu\_to\_scale\_up) | CPU % to Scale Up the number of containers | `any` | n/a | yes |
 | <a name="input_desired_tasks"></a> [desired\_tasks](#input\_desired\_tasks) | Number of containers desired to run the application task | `any` | n/a | yes |

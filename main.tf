@@ -42,6 +42,8 @@ module "common" {
 #   git_repository_name      = var.backend_git_repository_name
 #   git_repository_branch    = var.backend_git_repository_branch
 #   # sns_topic_arn        = module.sns.sns_topic_arn
+#   codebuild_build_env_vars   = var.backend_codebuild_build_env_vars
+#   codebuild_testing_env_vars = var.backend_codebuild_testing_env_vars
 # }
 
 # module "frontend" {

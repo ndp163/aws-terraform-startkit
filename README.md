@@ -30,10 +30,11 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_backend_codebuild_build_env_vars"></a> [backend\_codebuild\_build\_env\_vars](#input\_backend\_codebuild\_build\_env\_vars) | Environment variables for codebuild of backend building stage | `any` | n/a | yes |
+| <a name="input_backend_codebuild_testing_env_vars"></a> [backend\_codebuild\_testing\_env\_vars](#input\_backend\_codebuild\_testing\_env\_vars) | Environment variables for codebuild of backend testing stage | `any` | n/a | yes |
 | <a name="input_backend_git_repository_branch"></a> [backend\_git\_repository\_branch](#input\_backend\_git\_repository\_branch) | Git repository branch of backend | `string` | n/a | yes |
 | <a name="input_backend_git_repository_name"></a> [backend\_git\_repository\_name](#input\_backend\_git\_repository\_name) | Git repository name of backend | `string` | n/a | yes |
 | <a name="input_backend_git_repository_owner"></a> [backend\_git\_repository\_owner](#input\_backend\_git\_repository\_owner) | Owner name of backend git repository | `string` | n/a | yes |
-| <a name="input_codebuild_build_env_vars"></a> [codebuild\_build\_env\_vars](#input\_codebuild\_build\_env\_vars) | Environment variables for codebuild of backend building stage | `any` | n/a | yes |
 | <a name="input_cpu_to_scale_down"></a> [cpu\_to\_scale\_down](#input\_cpu\_to\_scale\_down) | CPU % to Scale Down the number of containers | `number` | n/a | yes |
 | <a name="input_cpu_to_scale_up"></a> [cpu\_to\_scale\_up](#input\_cpu\_to\_scale\_up) | CPU % to Scale Up the number of containers | `number` | n/a | yes |
 | <a name="input_desired_tasks"></a> [desired\_tasks](#input\_desired\_tasks) | Number of desired instances to run backend | `number` | n/a | yes |
