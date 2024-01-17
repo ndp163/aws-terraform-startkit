@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+  build:
+    commands:
+      - cp $ENV_PATH .env
+      - yarn install
+      - yarn run build
+  post_build:
+    commands:
+      - aws s3 cp --recursive ./dist/spa s3://$S3_FE_BUCKET/
+      - echo "S3 Upload complete"
+      - aws cloudfront create-invalidation --distribution-id=$CLOUDFRONT_DISTRIBUTION_ID --paths '/*'

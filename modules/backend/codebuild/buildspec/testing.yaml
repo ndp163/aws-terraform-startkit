@@ -1,0 +1,15 @@
+version: 0.2
+env:
+  shell: bash
+phases:
+  pre_build:
+    commands:
+      - docker login --username=$DOCKERHUB_USERNAME --password=$DOCKERHUB_PASSWORD
+      - cp env/.env.test .env
+  build:
+    commands:
+      - export DOCKER_CLIENT_TIMEOUT=180
+      - export COMPOSE_HTTP_TIMEOUT=180
+      - docker-compose -f ./docker-compose.test.yml up -d --build
+      - yarn
+      - yarn test:e2e:serial

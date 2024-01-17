@@ -1,0 +1,54 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo Logging in to Amazon ECR...
+      - aws --version
+      - $(aws ecr get-login --region $REGION --no-include-email)
+      - REPOSITORY_URI=$REPOSITORY_URL
+      - IMAGE_TAG=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Building the Docker image...
+      - cp $ENV_PATH .env
+      - printf "\nRDS_HOST=$RDS_HOST" >> .env;
+      - printf "\nRDS_PORT=$RDS_PORT" >> .env;
+      - printf "\nRDS_DATABASE=$RDS_DATABASE" >> .env;
+      - printf "\nRDS_USERNAME=$RDS_USERNAME" >> .env;
+      - printf "\nRDS_PASSWORD=$RDS_PASSWORD" >> .env;
+      - printf "\nREDIS_HOST=$REDIS_HOST" >> .env;
+      - printf "\nJWT_ACCESS_KEY=$JWT_ACCESS_KEY" >> .env;
+      - printf "\nJWT_REFRESH_KEY=$JWT_REFRESH_KEY" >> .env;
+      - printf "\nAPP_JWT_ACCESS_KEY=$APP_JWT_ACCESS_KEY" >> .env;
+      - printf "\nAPP_JWT_REFRESH_KEY=$APP_JWT_REFRESH_KEY" >> .env;
+      - printf "\nAPP_JWT_CODE_KEY=$APP_JWT_CODE_KEY" >> .env;
+      - printf "\nAPP_JWT_RESET_PWD_KEY=$APP_JWT_RESET_PWD_KEY" >> .env;
+      - printf "\nAPP_API_KEY=$APP_API_KEY" >> .env;
+      - printf "\nDOCTOR_JWT_ACCESS_KEY=$DOCTOR_JWT_ACCESS_KEY" >> .env;
+      - printf "\nDOCTOR_JWT_REFRESH_KEY=$DOCTOR_JWT_REFRESH_KEY" >> .env;
+      - printf "\nDOCTOR_JWT_CODE_KEY=$DOCTOR_JWT_CODE_KEY" >> .env;
+      - printf "\nDOCTOR_JWT_RESET_PWD_KEY=$DOCTOR_JWT_RESET_PWD_KEY" >> .env;
+      - printf "\nDOCTOR_API_KEY=$DOCTOR_API_KEY" >> .env;
+      - printf "\nADMIN_JWT_ACCESS_KEY=$ADMIN_JWT_ACCESS_KEY" >> .env;
+      - printf "\nADMIN_JWT_REFRESH_KEY=$ADMIN_JWT_REFRESH_KEY" >> .env;
+      - printf "\nADMIN_API_KEY=$ADMIN_API_KEY" >> .env;
+      - printf "\nCLOUDFRONT_KEY_PAIR_ID=$CLOUDFRONT_KEY_PAIR_ID" >> .env;
+      - printf "\nFIREBASE_CLIENT_EMAIL=$FIREBASE_CLIENT_EMAIL" >> .env;
+      - printf "\nWEBHOOK_SECRET_KEY=$WEBHOOK_SECRET_KEY" >> .env;
+
+      - docker build -t $REPOSITORY_URI:latest .
+      - docker tag $REPOSITORY_URI:latest $REPOSITORY_URI:$IMAGE_TAG
+  post_build:
+    commands:
+      - echo Build completed on `date`
+      - echo Pushing the Docker images...
+      - docker push $REPOSITORY_URI:latest
+      - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+
+artifacts:
+  files:
+    - imagedefinitions.json
+    - env/*

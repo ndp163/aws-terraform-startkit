@@ -1,0 +1,32 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: check-yaml
+      - id: check-json
+      - id: trailing-whitespace
+        args: ["--markdown-linebreak-ext=md"]
+      - id: check-added-large-files
+      - id: check-shebang-scripts-are-executable
+      - id: check-merge-conflict
+      - id: check-vcs-permalinks
+      - id: detect-private-key
+      - id: detect-aws-credentials
+        args: ["--allow-missing-credentials"]
+      - id: end-of-file-fixer
+      # - id: no-commit-to-branch
+      - id: pretty-format-json
+        args:
+          - --autofix
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.83.4
+    hooks:
+      - id: terraform_fmt
+        args:
+          - --args=-recursive
+      - id: terraform_docs
+        args:
+          - --args=--config=.terraform-docs.yaml
+          - --hook-config=--add-to-existing-file=true     # Boolean. true or false
+          - --hook-config=--create-file-if-not-exist=true # Boolean. true or false
+          - --hook-config=--use-standard-markers=true     # Boolean. Defaults in v1.x to false. Set to true for compatibility with terraform-docs

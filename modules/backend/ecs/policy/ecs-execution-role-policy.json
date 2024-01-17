@@ -1,0 +1,30 @@
+{
+  "Statement": [
+    {
+      "Action": [
+        "ecr:GetAuthorizationToken",
+        "ecr:BatchCheckLayerAvailability",
+        "ecr:GetDownloadUrlForLayer",
+        "ecr:BatchGetImage",
+        "ecs:ListClusters",
+        "logs:CreateLogStream",
+        "logs:PutLogEvents",
+        "secretsmanager:GetSecretValue",
+        "s3:*",
+        "ses:*",
+        "sts:*"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    },
+    {
+      "Action": [
+        "iam:GetRole",
+        "iam:PassRole"
+      ],
+      "Effect": "Allow",
+      "Resource": "*"
+    }
+  ],
+  "Version": "2012-10-17"
+}
