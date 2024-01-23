@@ -1,4 +1,4 @@
-resource "aws_security_group" "bastion" {
+resource "aws_security_group" "this" {
   name   = "${terraform.workspace}-${var.project}-bastion"
   vpc_id = var.vpc_id
 

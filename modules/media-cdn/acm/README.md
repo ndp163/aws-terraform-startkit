@@ -35,6 +35,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_media_cdn_acm_arn"></a> [media\_cdn\_acm\_arn](#output\_media\_cdn\_acm\_arn) | n/a |
-| <a name="output_media_cdn_domain_name"></a> [media\_cdn\_domain\_name](#output\_media\_cdn\_domain\_name) | n/a |
+| <a name="output_acm_arn"></a> [acm\_arn](#output\_acm\_arn) | n/a |
+| <a name="output_domain_name"></a> [domain\_name](#output\_domain\_name) | n/a |
 <!-- END_TF_DOCS -->

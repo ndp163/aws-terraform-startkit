@@ -31,6 +31,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_cloufront_key_path"></a> [cloufront\_key\_path](#input\_cloufront\_key\_path) | n/a | `string` | n/a | yes |
 | <a name="input_lambda_concurrency_threshold"></a> [lambda\_concurrency\_threshold](#input\_lambda\_concurrency\_threshold) | n/a | `number` | n/a | yes |
 | <a name="input_notification_subscription_mails"></a> [notification\_subscription\_mails](#input\_notification\_subscription\_mails) | n/a | `list(string)` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Project name | `string` | n/a | yes |

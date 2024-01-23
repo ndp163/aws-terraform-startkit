@@ -23,11 +23,11 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_alb.backend](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/alb) | resource |
-| [aws_alb_listener.backend](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/alb_listener) | resource |
-| [aws_alb_target_group.backend](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/alb_target_group) | resource |
-| [aws_lb_listener_rule.forward_to_target_group](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener_rule) | resource |
-| [aws_security_group.ecs_backend_loadbalance](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
+| [aws_alb.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/alb) | resource |
+| [aws_alb_listener.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/alb_listener) | resource |
+| [aws_alb_target_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/alb_target_group) | resource |
+| [aws_lb_listener_rule.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lb_listener_rule) | resource |
+| [aws_security_group.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
 
 ## Inputs
 

@@ -1,5 +1,5 @@
-resource "aws_iam_role" "codebuild_role" {
-  name = "${terraform.workspace}-${var.project}-codebuild-role"
+resource "aws_iam_role" "this" {
+  name = "${terraform.workspace}-${var.project}-codebuild-build-role"
   assume_role_policy = jsonencode({
     "Version" : "2012-10-17",
     "Statement" : [
@@ -14,8 +14,8 @@ resource "aws_iam_role" "codebuild_role" {
   })
 }
 
-resource "aws_iam_role_policy" "codebuild_policy" {
-  name   = "${terraform.workspace}-${var.project}-codebuild-policy"
-  role   = aws_iam_role.codebuild_role.id
+resource "aws_iam_role_policy" "this" {
+  name   = "${terraform.workspace}-${var.project}-codebuild-build-policy"
+  role   = aws_iam_role.this.id
   policy = file("${path.module}/policy/codebuild-policy.json")
 }

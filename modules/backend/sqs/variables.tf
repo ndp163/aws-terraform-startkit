@@ -16,3 +16,7 @@ variable "iot_raw_data_bucket" {
   description = "IoT RawData S3 bucket"
   type        = string
 }
+
+variable "backend_domain" {
+  type = string
+}

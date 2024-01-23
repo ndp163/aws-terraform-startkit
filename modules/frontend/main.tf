@@ -20,10 +20,11 @@ module "pipeline" {
   codebuild_name        = module.codebuild.codebuild_name
 }
 
-# module "acm" {
-#   source = "./acm"
-#   frontend_domain = var.frontend_domain
-# }
+module "acm" {
+  count           = var.frontend_domain != null ? 1 : 0
+  source          = "./acm"
+  frontend_domain = var.frontend_domain
+}
 
 module "lambda" {
   providers = {
@@ -39,8 +40,8 @@ module "cloudfront" {
   source                    = "./cloudfront"
   project                   = var.project
   origin_domain_name        = module.s3.frontend_domain_name
-  custom_domain_name        = "" # module.acm.frontend_domain_name
-  acm_arn                   = "" # module.acm.frontend_acm_arn
+  custom_domain_name        = one(module.acm) != null ? one(module.acm).domain_name : null
+  acm_arn                   = one(module.acm) != null ? one(module.acm).acm_arn : null
   log_bucket_domain_name    = var.log_bucket_domain_name
   authentication_lambda_arn = module.lambda.authentication_lambda_arn
 }

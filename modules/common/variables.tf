@@ -26,3 +26,7 @@ variable "public_subnet_1" {
 variable "public_subnet_2" {
   type = string
 }
+
+variable "cloufront_key_path" {
+  type = string
+}

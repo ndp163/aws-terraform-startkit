@@ -3,7 +3,7 @@ resource "tls_private_key" "cloudfront" {
 }
 
 resource "local_sensitive_file" "cloudfront" {
-  filename        = "${path.module}/${terraform.workspace}-${var.project}-cf-key.pem"
+  filename        = local.key_path
   content         = tls_private_key.cloudfront.private_key_pem
   file_permission = "0400"
 }

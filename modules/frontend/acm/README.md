@@ -35,6 +35,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_frontend_acm_arn"></a> [frontend\_acm\_arn](#output\_frontend\_acm\_arn) | n/a |
-| <a name="output_frontend_domain_name"></a> [frontend\_domain\_name](#output\_frontend\_domain\_name) | n/a |
+| <a name="output_acm_arn"></a> [acm\_arn](#output\_acm\_arn) | n/a |
+| <a name="output_domain_name"></a> [domain\_name](#output\_domain\_name) | n/a |
 <!-- END_TF_DOCS -->

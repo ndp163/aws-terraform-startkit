@@ -17,6 +17,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_acm"></a> [acm](#module\_acm) | ./acm | n/a |
 | <a name="module_cloudfront"></a> [cloudfront](#module\_cloudfront) | ./cloudfront | n/a |
 | <a name="module_s3"></a> [s3](#module\_s3) | ./s3 | n/a |
 
@@ -34,5 +35,8 @@ No resources.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_cloudfront_key_path"></a> [cloudfront\_key\_path](#output\_cloudfront\_key\_path) | n/a |
+| <a name="output_cloudfront_public_key_id"></a> [cloudfront\_public\_key\_id](#output\_cloudfront\_public\_key\_id) | n/a |
 <!-- END_TF_DOCS -->

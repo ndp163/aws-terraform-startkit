@@ -35,6 +35,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | AWS Region | `string` | n/a | yes |
+| <a name="input_backend_domain"></a> [backend\_domain](#input\_backend\_domain) | n/a | `string` | n/a | yes |
 | <a name="input_iot_account_id"></a> [iot\_account\_id](#input\_iot\_account\_id) | IoT Account ID | `string` | n/a | yes |
 | <a name="input_iot_raw_data_bucket"></a> [iot\_raw\_data\_bucket](#input\_iot\_raw\_data\_bucket) | IoT RawData S3 bucket | `string` | n/a | yes |
 | <a name="input_project_name"></a> [project\_name](#input\_project\_name) | The backend-iot project name | `any` | n/a | yes |

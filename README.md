@@ -19,7 +19,9 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_backend"></a> [backend](#module\_backend) | ./modules/backend | n/a |
 | <a name="module_common"></a> [common](#module\_common) | ./modules/common | n/a |
+| <a name="module_frontend"></a> [frontend](#module\_frontend) | ./modules/frontend | n/a |
 | <a name="module_media_cdn"></a> [media\_cdn](#module\_media\_cdn) | ./modules/media-cdn | n/a |
 
 ## Resources

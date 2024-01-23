@@ -1,3 +1,7 @@
-output "acm_cert" {
-  value = aws_acm_certificate.backend
+output "domain_name" {
+  value = aws_acm_certificate.this.domain_name
+}
+
+output "acm_arn" {
+  value = aws_acm_certificate.this.arm
 }

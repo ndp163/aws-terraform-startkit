@@ -12,8 +12,14 @@ variable "waf_arn" {
   type        = string
 }
 
-variable "acm_cert" {
-  type = any
+variable "custom_domain_name" {
+  description = "Custom domain name for CloudFront"
+  type        = string
+}
+
+variable "acm_arn" {
+  description = "WAF arn for Cloudfront"
+  type        = string
 }
 
 variable "log_bucket_domain_name" {

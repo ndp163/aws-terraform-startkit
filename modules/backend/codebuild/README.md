@@ -17,18 +17,16 @@ No requirements.
 
 ## Modules
 
-No modules.
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_build"></a> [build](#module\_build) | ./build | n/a |
+| <a name="module_testing"></a> [testing](#module\_testing) | ./testing | n/a |
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [aws_cloudwatch_log_group.codebuild_build](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
-| [aws_cloudwatch_log_group.codebuild_testing](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_log_group) | resource |
-| [aws_codebuild_project.build](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codebuild_project) | resource |
 | [aws_codebuild_project.testing](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/codebuild_project) | resource |
-| [aws_iam_role.codebuild_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
-| [aws_iam_role_policy.codebuild_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy) | resource |
 
 ## Inputs
 
@@ -37,7 +35,6 @@ No modules.
 | <a name="input_codebuild_build_env_vars"></a> [codebuild\_build\_env\_vars](#input\_codebuild\_build\_env\_vars) | n/a | `any` | n/a | yes |
 | <a name="input_codebuild_testing_env_vars"></a> [codebuild\_testing\_env\_vars](#input\_codebuild\_testing\_env\_vars) | n/a | `any` | n/a | yes |
 | <a name="input_project"></a> [project](#input\_project) | Project name | `any` | n/a | yes |
-| <a name="input_repository_url"></a> [repository\_url](#input\_repository\_url) | The url of the ECR repository | `any` | n/a | yes |
 
 ## Outputs
 

@@ -1,4 +1,4 @@
-resource "aws_security_group" "ecs_backend_loadbalance" {
+resource "aws_security_group" "this" {
   name        = "${terraform.workspace}-${var.project}-ecs-backend-loadbalance"
   description = "ALB Security Group"
   vpc_id      = var.vpc_id

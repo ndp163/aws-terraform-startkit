@@ -1,7 +1,8 @@
-# module "acm" {
-#   source = "./acm"
-#   frontend_domain = var.media_cdn_domain
-# }
+module "acm" {
+  source          = "./acm"
+  count           = var.media_cdn_domain != null ? 1 : 0
+  frontend_domain = var.media_cdn_domain
+}
 
 module "s3" {
   source                       = "./s3"
@@ -13,7 +14,7 @@ module "cloudfront" {
   source                 = "./cloudfront"
   project                = var.project
   origin_domain_name     = module.s3.media_cdn_bucket_domain_name
-  custom_domain_name     = "" # module.acm.frontend_domain_name
-  acm_arn                = "" # module.acm.frontend_acm_arn
+  custom_domain_name     = one(module.acm) != null ? one(module.acm).domain_name : null
+  acm_arn                = one(module.acm) != null ? one(module.acm).acm_arn : null
   log_bucket_domain_name = var.log_bucket_domain_name
 }

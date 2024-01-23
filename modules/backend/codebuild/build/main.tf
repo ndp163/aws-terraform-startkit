@@ -1,8 +1,8 @@
-resource "aws_codebuild_project" "build" {
-  name          = local.codebuild_build_name
+resource "aws_codebuild_project" "this" {
+  name          = local.codebuild_name
   build_timeout = "60"
 
-  service_role = aws_iam_role.codebuild_role.arn
+  service_role = aws_iam_role.this.arn
 
   artifacts {
     type = "CODEPIPELINE"
@@ -17,7 +17,7 @@ resource "aws_codebuild_project" "build" {
     privileged_mode = true
 
     dynamic "environment_variable" {
-      for_each = var.codebuild_build_env_vars
+      for_each = var.environment_variables
       content {
         type  = "PLAINTEXT"
         name  = environment_variable.key
@@ -28,6 +28,6 @@ resource "aws_codebuild_project" "build" {
 
   source {
     type      = "CODEPIPELINE"
-    buildspec = file("${path.module}/buildspec/build.yaml")
+    buildspec = file("${path.module}/buildspec.yaml")
   }
 }

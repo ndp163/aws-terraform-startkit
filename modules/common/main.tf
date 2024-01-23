@@ -11,8 +11,9 @@ module "s3" {
 }
 
 module "secret-manager" {
-  source  = "./secret-manager"
-  project = var.project
+  source             = "./secret-manager"
+  project            = var.project
+  cloufront_key_path = var.cloufront_key_path
 }
 
 module "sns" {

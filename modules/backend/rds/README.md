@@ -23,17 +23,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_appautoscaling_policy.scale_connections_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/appautoscaling_policy) | resource |
-| [aws_appautoscaling_policy.scale_cpu_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/appautoscaling_policy) | resource |
-| [aws_appautoscaling_target.rds_scale_target](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/appautoscaling_target) | resource |
-| [aws_cloudwatch_metric_alarm.rds_cpu_high](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
-| [aws_cloudwatch_metric_alarm.rds_freeable_memory_low](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
-| [aws_cloudwatch_metric_alarm.rds_high_connections](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
-| [aws_cloudwatch_metric_alarm.rds_high_deadlocks](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudwatch_metric_alarm) | resource |
+| [aws_db_instance.mysql](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_instance) | resource |
+| [aws_db_parameter_group.mysql](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_parameter_group) | resource |
 | [aws_db_subnet_group.rds_mysql](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/db_subnet_group) | resource |
-| [aws_rds_cluster.mysql](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster) | resource |
-| [aws_rds_cluster_instance.mysql](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster_instance) | resource |
-| [aws_rds_cluster_parameter_group.mysql](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/rds_cluster_parameter_group) | resource |
 | [aws_security_group.rds_mysql](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/security_group) | resource |
 
 ## Inputs
@@ -61,6 +53,7 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_cluster_endpoint"></a> [cluster\_endpoint](#output\_cluster\_endpoint) | n/a |
+| <a name="output_database_name"></a> [database\_name](#output\_database\_name) | n/a |
 | <a name="output_port"></a> [port](#output\_port) | n/a |
 | <a name="output_rds_sg_id"></a> [rds\_sg\_id](#output\_rds\_sg\_id) | n/a |
 <!-- END_TF_DOCS -->

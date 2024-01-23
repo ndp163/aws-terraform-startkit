@@ -23,7 +23,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_acm_certificate.backend](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate) | resource |
+| [aws_acm_certificate.this](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/acm_certificate) | resource |
 
 ## Inputs
 
@@ -35,5 +35,6 @@ No modules.
 
 | Name | Description |
 |------|-------------|
-| <a name="output_acm_cert"></a> [acm\_cert](#output\_acm\_cert) | n/a |
+| <a name="output_acm_arn"></a> [acm\_arn](#output\_acm\_arn) | n/a |
+| <a name="output_domain_name"></a> [domain\_name](#output\_domain\_name) | n/a |
 <!-- END_TF_DOCS -->

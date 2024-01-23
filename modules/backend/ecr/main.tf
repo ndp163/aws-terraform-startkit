@@ -1,4 +1,4 @@
-resource "aws_ecr_repository" "backend_repo" {
+resource "aws_ecr_repository" "this" {
   name         = "${terraform.workspace}-${var.project}-backend-repo"
   force_delete = true
 
@@ -7,8 +7,8 @@ resource "aws_ecr_repository" "backend_repo" {
   }
 }
 
-resource "aws_ecr_lifecycle_policy" "backend_repo_policy" {
-  repository = aws_ecr_repository.backend_repo.name
+resource "aws_ecr_lifecycle_policy" "this" {
+  repository = aws_ecr_repository.this.name
 
   policy = jsonencode({
     rules = [

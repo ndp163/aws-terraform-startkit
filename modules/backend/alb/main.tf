@@ -1,4 +1,4 @@
-resource "aws_alb" "backend" {
+resource "aws_alb" "this" {
   name            = "${terraform.workspace}-${var.project}-backend"
   subnets         = var.subnet_ids
   security_groups = [aws_security_group.ecs_backend_loadbalance.id]
@@ -8,7 +8,7 @@ resource "aws_alb" "backend" {
   }
 }
 
-resource "aws_alb_target_group" "backend" {
+resource "aws_alb_target_group" "this" {
   name        = "${terraform.workspace}-${var.project}-backend"
   port        = var.container_port
   protocol    = "HTTP"
@@ -25,11 +25,11 @@ resource "aws_alb_target_group" "backend" {
     create_before_destroy = true
   }
 
-  depends_on = [aws_alb.backend]
+  depends_on = [aws_alb.this]
 }
 
-resource "aws_alb_listener" "backend" {
-  load_balancer_arn = aws_alb.backend.arn
+resource "aws_alb_listener" "this" {
+  load_balancer_arn = aws_alb.this.arn
   port              = 80
   protocol          = "HTTP"
 
@@ -43,12 +43,12 @@ resource "aws_alb_listener" "backend" {
   }
 }
 
-resource "aws_lb_listener_rule" "forward_to_target_group" {
-  listener_arn = aws_alb_listener.backend.arn
+resource "aws_lb_listener_rule" "this" {
+  listener_arn = aws_alb_listener.this.arn
 
   action {
     type             = "forward"
-    target_group_arn = aws_alb_target_group.backend.arn
+    target_group_arn = aws_alb_target_group.this.arn
   }
 
   condition {

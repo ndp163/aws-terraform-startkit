@@ -47,4 +47,6 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_cloudfront_oai_arn"></a> [cloudfront\_oai\_arn](#output\_cloudfront\_oai\_arn) | n/a |
+| <a name="output_key_path"></a> [key\_path](#output\_key\_path) | n/a |
+| <a name="output_public_key_id"></a> [public\_key\_id](#output\_public\_key\_id) | n/a |
 <!-- END_TF_DOCS -->
