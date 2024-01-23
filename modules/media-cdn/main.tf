@@ -1,6 +1,6 @@
 module "acm" {
-  source          = "./acm"
   count           = var.media_cdn_domain != null ? 1 : 0
+  source          = "./acm"
   frontend_domain = var.media_cdn_domain
 }
 

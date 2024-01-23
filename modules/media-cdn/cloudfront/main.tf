@@ -5,8 +5,8 @@ resource "aws_cloudfront_origin_access_identity" "media_cdn" {
 resource "aws_cloudfront_distribution" "media_cdn" {
   enabled         = true
   is_ipv6_enabled = true
-  # aliases = [var.custom_domain_name]
-  price_class = "PriceClass_All"
+  aliases         = var.custom_domain_name != null ? [var.custom_domain_name] : null
+  price_class     = "PriceClass_All"
 
   origin {
     domain_name = var.origin_domain_name
@@ -60,10 +60,10 @@ resource "aws_cloudfront_distribution" "media_cdn" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = true
-    # acm_certificate_arn      = var.acm_arn
-    # minimum_protocol_version = "TLSv1.2_2021"
-    # ssl_support_method       = "sni-only"
+    cloudfront_default_certificate = var.acm_arn != null ? false : true
+    acm_certificate_arn            = var.acm_arn
+    minimum_protocol_version       = var.acm_arn != null ? "TLSv1.2_2021" : null
+    ssl_support_method             = var.acm_arn != null ? "sni-only" : null
   }
 
   restrictions {
