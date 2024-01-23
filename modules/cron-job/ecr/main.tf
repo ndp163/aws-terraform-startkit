@@ -1,6 +1,5 @@
-# Cron job definition
-resource "aws_ecr_repository" "ecr_repo" {
-  name         = "${terraform.workspace}-${var.project}-ecr-cron-job"
+resource "aws_ecr_repository" "this" {
+  name         = "${terraform.workspace}-${var.project}-cron-job-repo"
   force_delete = true
 
   image_scanning_configuration {
@@ -8,14 +7,14 @@ resource "aws_ecr_repository" "ecr_repo" {
   }
 }
 
-resource "aws_ecr_lifecycle_policy" "ecr_ropo_policy" {
-  repository = aws_ecr_repository.ecr_repo.name
+resource "aws_ecr_lifecycle_policy" "this" {
+  repository = aws_ecr_repository.this.name
 
   policy = jsonencode({
     rules = [
       {
         rulePriority = 1,
-        description  = "Delete all images except the last one",
+        description  = "Delete all images except the last 4",
         selection = {
           tagStatus   = "any",
           countType   = "imageCountMoreThan",

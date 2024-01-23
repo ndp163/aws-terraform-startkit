@@ -1,6 +1,6 @@
-resource "aws_security_group" "cron_job" {
+resource "aws_security_group" "this" {
   name   = "${terraform.workspace}-${var.project}-cron-job"
-  vpc_id = aws_vpc.cluster_vpc.id
+  vpc_id = var.vpc_id
 
   egress {
     from_port   = 0
