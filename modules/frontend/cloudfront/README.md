@@ -24,6 +24,7 @@ No modules.
 | Name | Type |
 |------|------|
 | [aws_cloudfront_distribution.frontend](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution) | resource |
+| [aws_cloudfront_function.viewer_request](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_function) | resource |
 | [aws_cloudfront_origin_access_identity.frontend](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_origin_access_identity) | resource |
 
 ## Inputs
@@ -31,7 +32,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_acm_arn"></a> [acm\_arn](#input\_acm\_arn) | WAF arn for Cloudfront | `string` | n/a | yes |
-| <a name="input_authentication_lambda_arn"></a> [authentication\_lambda\_arn](#input\_authentication\_lambda\_arn) | Lambda arn using for browser basic authen | `string` | n/a | yes |
+| <a name="input_authen_password"></a> [authen\_password](#input\_authen\_password) | n/a | `string` | n/a | yes |
+| <a name="input_authen_username"></a> [authen\_username](#input\_authen\_username) | n/a | `string` | n/a | yes |
 | <a name="input_custom_domain_name"></a> [custom\_domain\_name](#input\_custom\_domain\_name) | Custom domain name for CloudFront | `string` | n/a | yes |
 | <a name="input_log_bucket_domain_name"></a> [log\_bucket\_domain\_name](#input\_log\_bucket\_domain\_name) | Bucket for Cloudfront logging | `string` | n/a | yes |
 | <a name="input_origin_domain_name"></a> [origin\_domain\_name](#input\_origin\_domain\_name) | Domain name of s3 bucket | `string` | n/a | yes |

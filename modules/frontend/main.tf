@@ -26,22 +26,13 @@ module "acm" {
   frontend_domain = var.frontend_domain
 }
 
-module "lambda" {
-  providers = {
-    aws = aws.east
-  }
-  source          = "./lambda"
-  project         = var.project
-  authen_username = var.authen_username
-  authen_password = var.authen_password
-}
-
 module "cloudfront" {
-  source                    = "./cloudfront"
-  project                   = var.project
-  origin_domain_name        = module.s3.frontend_domain_name
-  custom_domain_name        = one(module.acm) != null ? one(module.acm).domain_name : null
-  acm_arn                   = one(module.acm) != null ? one(module.acm).acm_arn : null
-  log_bucket_domain_name    = var.log_bucket_domain_name
-  authentication_lambda_arn = module.lambda.authentication_lambda_arn
+  source                 = "./cloudfront"
+  project                = var.project
+  origin_domain_name     = module.s3.frontend_domain_name
+  custom_domain_name     = one(module.acm) != null ? one(module.acm).domain_name : null
+  acm_arn                = one(module.acm) != null ? one(module.acm).acm_arn : null
+  log_bucket_domain_name = var.log_bucket_domain_name
+  authen_username        = var.authen_username
+  authen_password        = var.authen_password
 }

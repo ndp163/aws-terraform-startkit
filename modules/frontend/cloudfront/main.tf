@@ -36,10 +36,9 @@ resource "aws_cloudfront_distribution" "frontend" {
       }
     }
 
-    lambda_function_association {
+    function_association {
       event_type   = "viewer-request"
-      lambda_arn   = var.authentication_lambda_arn
-      include_body = false
+      function_arn = aws_cloudfront_function.viewer_request.arn
     }
   }
 

@@ -22,7 +22,11 @@ variable "log_bucket_domain_name" {
   type        = string
 }
 
-variable "authentication_lambda_arn" {
-  description = "Lambda arn using for browser basic authen"
-  type        = string
+variable "authen_username" {
+  type = string
+}
+
+variable "authen_password" {
+  type      = string
+  sensitive = true
 }
